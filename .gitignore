@@ -1,0 +1,12 @@
+bin/
+obj/
+TestResults/
+coverage/
+coveragereport/
+.vs/
+.idea/
+*.user
+*.suo
+*.ncrunch*
+*.coverage
+*.coveragexml
