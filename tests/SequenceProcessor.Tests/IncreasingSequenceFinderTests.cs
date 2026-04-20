@@ -48,7 +48,7 @@ public sealed class IncreasingSequenceFinderTests
     [Fact]
     public void FindLongestIncreasingSequence_WhenRunsTie_ReturnsEarliestRun()
     {
-        string actual = _finder.FindLongestIncreasingSequence("1 2 0 3 4");
+        string actual = _finder.FindLongestIncreasingSequence("1 2 0 3");
         Assert.Equal("1 2", actual);
     }
 

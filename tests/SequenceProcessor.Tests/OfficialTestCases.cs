@@ -12,7 +12,13 @@ public static class OfficialTestCases
             string dataFilePath = Path.Combine(AppContext.BaseDirectory, "TestData", "official-test-cases.json");
             string json = File.ReadAllText(dataFilePath);
 
-            IReadOnlyList<OfficialTestCase> cases = JsonSerializer.Deserialize<List<OfficialTestCase>>(json)
+            JsonSerializerOptions options = new()
+            {
+                PropertyNameCaseInsensitive = true
+            };
+
+            IReadOnlyList<OfficialTestCase> cases =
+                JsonSerializer.Deserialize<List<OfficialTestCase>>(json, options)
                 ?? throw new InvalidOperationException("Unable to deserialize official test case data.");
 
             TheoryData<string, string> theoryData = new();
